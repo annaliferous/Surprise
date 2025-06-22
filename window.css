@@ -1,0 +1,81 @@
+body {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 130px;
+    width:300px;
+    outline: #ff3399;
+    
+}
+
+.window-outline {
+    width: 300px;
+    background-color: #F4ACFF;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #800042;
+    border-bottom: 2px solid #800042;
+    outline-color: #F4ACFF;
+    
+    border-radius: 2px;
+    /* box-shadow: 0 0 0 1pt grey; */
+    
+}
+
+.window-header {
+    background-color: #3529EB;
+    background-image: linear-gradient(to right, #3529EB , #E0C4FE);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px;
+    font-size: 15px;
+    font-weight: bold;
+    
+
+}
+
+.window-buttons div {
+  width: 15px;
+  height: 15px;
+  margin-left: 4px;
+  background: #F4ACFF;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #800042;
+  border-bottom: 2px solid #800042;
+  display: inline-block;
+  box-shadow: 1px 1px 2px gray;
+  /*box-shadow: offset-x offset-y blur-radius spread-radius color;*/
+  /* box-shadow: 
+    1px 1px 0 #c77dff,
+    2px 2px 0 #9d4edd,
+    3px 3px 0 #7b2cbf; */
+}
+
+.window-content {
+    text-align: center;
+    font-family: monospace;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.choose-buttons {
+    margin-top: 15px;
+}
+button {
+    width: 80px;
+    background: #F4ACFF;
+    border: 2px solid #ff7ca8;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: monospace;
+    cursor: pointer;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #800042;
+    border-bottom: 2px solid #800042;
+    box-shadow: 1px 1px 2px gray;
+  
+}
