@@ -17,7 +17,7 @@
             <span>Do you want a suprise cat?</span>
             <div class="choose-buttons">
                 <button class="OK"  id="OK" onclick="okButton()">OK</button>
-                <button class="Cancel">Cancel</button>
+                <button class="cancel" id="cancel" onclick="cancel()">Cancel</button>
             </div>
         </div>
         <div class="window-content" id="loading_window">
@@ -47,6 +47,21 @@
         </div>
         <div class="window-content" id="cat">
             <img src="" id="cat_gif"/>
+        </div>
+    </div>
+    <div class="window-outline" id="popup1">
+        <div class="window-header">
+            <span class="message">🐱CAAATS🐱</span>
+            <div class="close" id="close" onclick="close()">
+                <span>×</span>
+            </div>
+        </div>
+        <div class="window-content" id="prompt">
+            <span>Are you sure?</span>
+            <div class="choose-buttons">
+                <button class="Yes"  id="Yes"">Yes</button>
+                <button class="Cancel">Cancel</button>
+            </div>
         </div>
     </div>
         

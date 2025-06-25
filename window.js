@@ -24,6 +24,8 @@ window.onload = function () {
 //Hide loading bar
 document.getElementById("loading_window").style.display = "none";
 document.getElementById("cat").style.display = "none";
+//Hide PopUps
+document.getElementById("popup1").style.display = "none";
 
 //X Button
 document.getElementById("close").onclick = function() {close()}
@@ -56,3 +58,13 @@ const catGifs = [
 ]
 const randomCat = catGifs[Math.floor(Math.random() * catGifs.length)];
 document.getElementById("cat_gif").src = randomCat;
+
+
+
+//PopUps
+//After clicking the Cancel Button for the first time
+document.getElementById("cancel").onclick = function() {cancel()}
+
+function cancel() {
+  document.getElementById("popup1").style.display = "block";
+}

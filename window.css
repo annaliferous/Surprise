@@ -142,3 +142,9 @@ button {
     width: 110px;
     height: auto;
 }
+
+#popup1 {
+    top: 50px;
+    left: 50px;
+    position: absolute;
+}
