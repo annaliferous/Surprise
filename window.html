@@ -6,23 +6,50 @@
     <link rel="stylesheet" href="window.css">
 
 <body>
-    <div class="window-outline">
+    <div class="window-outline" id="window-outline">
         <div class="window-header">
             <span class="message">🐱CAAATS🐱</span>
-            <div class="window-buttons">
-                <div class="minimize"></div>
-                <div class="maximize"></div>
-                <div class="close"></div>
+            <div class="close" id="close" onclick="close()">
+                <span>×</span>
             </div>
         </div>
-        <div class="window-content">
+        <div class="window-content" id="prompt">
             <span>Do you want a suprise cat?</span>
-            <div class="choose-buttons"></div>
-            <button class="OK">OK</button>
-            <button class="Cancel">Cancel</button>
+            <div class="choose-buttons">
+                <button class="OK"  id="OK" onclick="okButton()">OK</button>
+                <button class="Cancel">Cancel</button>
+            </div>
         </div>
-        
+        <div class="window-content" id="loading_window">
+            <span>Loading Cat</span>
+            <div class="loading_bar">
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+                <div class="segment" id="last-segment"></div>
+            </div>
+        </div>
+        <div class="window-content" id="cat">
+            <img src="" id="cat_gif"/>
+        </div>
     </div>
+        
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     <script type="module" src="window.js"></script>
     

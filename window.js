@@ -1,4 +1,4 @@
-
+// move window around
 let position = { x: 0, y: 0 };
 interact('.window-outline').draggable({
   listeners: {
@@ -14,3 +14,45 @@ interact('.window-outline').draggable({
     },
   }
 })
+
+//change mouse design
+window.onload = function () {
+  document.body.style.cursor = 'url("assets/mouse_rose.png"), auto';
+};
+
+
+//Hide loading bar
+document.getElementById("loading_window").style.display = "none";
+document.getElementById("cat").style.display = "none";
+
+//X Button
+document.getElementById("close").onclick = function() {close()}
+function close() {
+  document.getElementById("window-outline").style.display = "none";
+}
+
+//Okay Button
+document.getElementById("OK").onclick = function() {okButton()};
+
+function okButton(){
+  document.getElementById("prompt").style.display = "none";
+  document.getElementById("loading_window").style.display = "block";
+  
+}
+
+const lastSegment = document.getElementById('last-segment');
+
+lastSegment.addEventListener('animationend', () => {
+  document.getElementById("loading_window").style.display = "none";
+  document.getElementById("cat").style.display = "block";
+});
+
+//show Cat
+const catGifs = [
+  'assets/cat_1.gif',
+  'assets/cat_2.gif',
+  'assets/cat_3.gif',
+  'assets/cat_4.gif'
+]
+const randomCat = catGifs[Math.floor(Math.random() * catGifs.length)];
+document.getElementById("cat_gif").src = randomCat;

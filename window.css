@@ -11,6 +11,7 @@ body {
 
 .window-outline {
     width: 300px;
+    height: auto;
     background-color: #F4ACFF;
     border-top: 2px solid white;
     border-left: 2px solid white;
@@ -36,7 +37,7 @@ body {
 
 }
 
-.window-buttons div {
+.close{
   width: 15px;
   height: 15px;
   margin-left: 4px;
@@ -48,11 +49,13 @@ body {
   display: inline-block;
   box-shadow: 1px 1px 2px gray;
   /*box-shadow: offset-x offset-y blur-radius spread-radius color;*/
-  /* box-shadow: 
-    1px 1px 0 #c77dff,
-    2px 2px 0 #9d4edd,
-    3px 3px 0 #7b2cbf; */
+  text-align: center;
+  font-size: medium;
+  color: black;
 }
+
+
+
 
 .window-content {
     text-align: center;
@@ -60,6 +63,7 @@ body {
     padding: 5px;
     margin-top: 10px;
 }
+
 
 .choose-buttons {
     margin-top: 15px;
@@ -78,4 +82,63 @@ button {
     border-bottom: 2px solid #800042;
     box-shadow: 1px 1px 2px gray;
   
+}
+
+.loading_bar {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    gap: 2px;
+    margin-top: 20px;
+    height: 20px;
+    border: 2px solid #5b008c;
+    background-color: #d9a8f0;
+    overflow: hidden;
+}
+
+.segment {
+    background-color: #a53edb;
+    opacity: 0;
+    animation: loading 1s linear 1 forwards;
+}
+ /* Delay each segment for sequential effect */
+    .segment:nth-child(1) { animation-delay: 0s; }
+    .segment:nth-child(2) { animation-delay: 1s; }
+    .segment:nth-child(3) { animation-delay: 2s; }
+    .segment:nth-child(4) { animation-delay: 3s; }
+    .segment:nth-child(5) { animation-delay: 4s; }
+    .segment:nth-child(6) { animation-delay: 5s; }
+    .segment:nth-child(7) { animation-delay: 6s; }
+    .segment:nth-child(8) { animation-delay: 7s; }
+    .segment:nth-child(9) { animation-delay: 8s; }
+    .segment:nth-child(10) { animation-delay: 9s; }
+    .segment:nth-child(11) { animation-delay: 10s; }
+    .segment:nth-child(12) { animation-delay: 11s; }
+    .segment:nth-child(13) { animation-delay: 12s; }
+    .segment:nth-child(14) { animation-delay: 13s; }
+    .segment:nth-child(15) { animation-delay: 14s; }
+    .segment:nth-child(16) { animation-delay: 15s; }
+    .segment:nth-child(17) { animation-delay: 16s; }
+    .segment:nth-child(18) { animation-delay: 17s; }
+    .segment:nth-child(19) { animation-delay: 18s; }
+    .segment:nth-child(20) { animation-delay: 19s; }
+
+@keyframes loading {
+  0%   { opacity: 0.2; }
+  50%  { opacity: 1; }
+  100% { opacity: 1; } /* Don't fade back */
+}
+
+#cat {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: auto;
+    margin-top: 0px;
+}
+
+#cat_gif {
+    width: 110px;
+    height: auto;
 }
