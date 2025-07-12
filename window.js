@@ -1,3 +1,29 @@
+//background
+const grid = document.getElementById("grid");
+
+  const pawSize = 250; // px
+  const cols = Math.ceil(window.innerWidth / pawSize);
+  const rows = Math.ceil(window.innerHeight / pawSize);
+
+  // Set grid layout dynamically
+  grid.style.gridTemplateColumns = `repeat(${cols}, ${pawSize}px)`;
+  grid.style.gridTemplateRows = `repeat(${rows}, ${pawSize}px)`;
+
+  // Create paw elements and add to grid
+  const totalPaws = cols * rows;
+  for (let i = 0; i < totalPaws; i++) {
+    const paw = document.createElement("div");
+    paw.classList.add("paw");
+
+    // Optional: Add animation delay for a wavy effect
+    //paw.style.animationDelay = `${(i % cols) * 0.1}s`;
+
+    grid.appendChild(paw);
+  }
+
+
+
+
 // move window around
 let position = { x: 0, y: 0 };
 interact('.window-outline').draggable({
@@ -18,14 +44,14 @@ interact('.window-outline').draggable({
 //change mouse design
 window.onload = function () {
   document.body.style.cursor = 'url("assets/mouse_rose.png"), auto';
+  document.getElementById("window-outline").style.cursor = 'url("assets/mouse_rose.png"), auto';
 };
 
 
 //Hide loading bar
 document.getElementById("loading_window").style.display = "none";
 document.getElementById("cat").style.display = "none";
-//Hide PopUps
-document.getElementById("popup1").style.display = "none";
+
 
 //X Button
 document.getElementById("close").onclick = function() {close()}
@@ -63,8 +89,14 @@ document.getElementById("cat_gif").src = randomCat;
 
 //PopUps
 //After clicking the Cancel Button for the first time
-document.getElementById("cancel").onclick = function() {cancel()}
+//document.getElementById("cancel").onclick = function() {cancel()}
 
-function cancel() {
-  document.getElementById("popup1").style.display = "block";
+window.cancel = function(currentIndex) {
+  //const currentPopup = document.getElementById(`popup${currentIndex}`);
+  const nextPopup = document.getElementById(`popup${currentIndex + 1}`);
+  console.log("cancel!")
+
+  if (nextPopup) {
+    nextPopup.style.display = "block";
+  }
 }

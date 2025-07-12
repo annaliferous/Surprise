@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="window.css">
 
 <body>
+    <div class="background-grid" id="grid"></div>
     <div class="window-outline" id="window-outline">
         <div class="window-header">
             <span class="message">🐱CAAATS🐱</span>
@@ -17,7 +18,7 @@
             <span>Do you want a suprise cat?</span>
             <div class="choose-buttons">
                 <button class="OK"  id="OK" onclick="okButton()">OK</button>
-                <button class="cancel" id="cancel" onclick="cancel()">Cancel</button>
+                <button class="cancel" id="cancel" onclick="cancel(0)">Cancel</button>
             </div>
         </div>
         <div class="window-content" id="loading_window">
@@ -49,18 +50,33 @@
             <img src="" id="cat_gif"/>
         </div>
     </div>
-    <div class="window-outline" id="popup1">
+    <div class="window-outline" id="popup1" style="display: none;">
         <div class="window-header">
             <span class="message">🐱CAAATS🐱</span>
             <div class="close" id="close" onclick="close()">
                 <span>×</span>
             </div>
         </div>
-        <div class="window-content" id="prompt">
+        <div class="window-content">
             <span>Are you sure?</span>
             <div class="choose-buttons">
                 <button class="Yes"  id="Yes"">Yes</button>
-                <button class="Cancel">Cancel</button>
+                <button class="Cancel" id="cancel" onclick="cancel(1)">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="window-outline" id="popup2" style="display: none;">
+        <div class="window-header">
+            <span class="message">🐱CAAATS🐱</span>
+            <div class="close" id="close" onclick="close()">
+                <span>×</span>
+            </div>
+        </div>
+        <div class="window-content">
+            <span>Are you <b>really</b> sure?</span>
+            <div class="choose-buttons">
+                <button class="Yes"  id="Yes"">Yes</button>
+                <button class="Cancel" id="cancel" onclick="cancel(2)">Cancel</button>
             </div>
         </div>
     </div>

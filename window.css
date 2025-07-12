@@ -5,8 +5,34 @@ body {
     align-content: center;
     height: 130px;
     width:300px;
-    outline: #ff3399;
-    
+    outline: #ff3399; 
+}
+
+.background-grid {
+    position: fixed; /* stays behind everything and doesn’t scroll */
+    top: 0;
+    left: 0;
+    z-index: -1; /* pushes behind all other content */
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* So it doesn't interfere with clicks */
+}
+
+
+.paw {
+    width: 250px;
+    height: 250px;
+    background-image: url("assets/paw_rose_small.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotatePaw 2s infinite ease-in-out;
+    }
+
+@keyframes rotatePaw {
+    0%   { transform: rotate(-45deg); }
+    50% { transform: rotate(45deg); }
+    100% { transform: rotate(-45deg); }
 }
 
 .window-outline {
@@ -146,5 +172,11 @@ button {
 #popup1 {
     top: 50px;
     left: 50px;
+    position: absolute;
+}
+
+#popup2 {
+    top: 100px;
+    left: 100px;
     position: absolute;
 }
