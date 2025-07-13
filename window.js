@@ -22,8 +22,6 @@ const grid = document.getElementById("grid");
   }
 
 
-
-
 // move window around
 let position = { x: 0, y: 0 };
 interact('.window-outline').draggable({
@@ -42,10 +40,9 @@ interact('.window-outline').draggable({
 })
 
 //change mouse design
-window.onload = function () {
-  document.body.style.cursor = 'url("assets/mouse_rose.png"), auto';
-  document.getElementById("window-outline").style.cursor = 'url("assets/mouse_rose.png"), auto';
-};
+document.body.style.cursor = 'url("assets/mouse_rose.png"), auto';
+document.getElementById("window-outline").style.cursor = 'url("assets/mouse_rose.png"), auto';
+
 
 
 //Hide loading bar
@@ -92,11 +89,19 @@ document.getElementById("cat_gif").src = randomCat;
 //document.getElementById("cancel").onclick = function() {cancel()}
 
 window.cancel = function(currentIndex) {
+  
   //const currentPopup = document.getElementById(`popup${currentIndex}`);
   const nextPopup = document.getElementById(`popup${currentIndex + 1}`);
   console.log("cancel!")
 
   if (nextPopup) {
     nextPopup.style.display = "block";
+  }
+
+  if(nextPopup == 1){
+    //stop animation
+    const paws = document.querySelectorAll(".paw");
+    paws.forEach(paw => paw.classList.add("stopped"));
+
   }
 }

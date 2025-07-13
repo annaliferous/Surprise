@@ -26,13 +26,21 @@ body {
     background-image: url("assets/paw_rose_small.png");
     background-size: contain;
     background-repeat: no-repeat;
-    animation: rotatePaw 2s infinite ease-in-out;
+    /* Smmoth animation */
+    /* animation: rotatePaw 2s infinite ease-in-out;*/
+    /* Jumping animation */
+    animation: rotatePaw 2s steps(1) infinite;
     }
 
 @keyframes rotatePaw {
     0%   { transform: rotate(-45deg); }
     50% { transform: rotate(45deg); }
     100% { transform: rotate(-45deg); }
+}
+
+/* This class will stop the rotation */
+.paw.stopped {
+  animation: none;
 }
 
 .window-outline {
@@ -44,6 +52,8 @@ body {
     border-right: 2px solid #800042;
     border-bottom: 2px solid #800042;
     outline-color: #F4ACFF;
+    justify-content: center;
+    align-items: center;
     
     border-radius: 2px;
     /* box-shadow: 0 0 0 1pt grey; */
