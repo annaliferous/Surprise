@@ -7,76 +7,124 @@
 
 <body>
     <div class="background-grid" id="grid"></div>
-    <div class="window-outline" id="window-outline">
-        <div class="window-header">
-            <span class="message">🐱CAAATS🐱</span>
-            <div class="close" id="close" onclick="close()">
-                <span>×</span>
+    <div class="window">
+        <div class="window-outline" id="window-outline">
+            <div class="window-header">
+                <span class="message">🐱CAAATS🐱</span>
+                <div class="close" id="close" onclick="close()">
+                    <span>×</span>
+                </div>
+            </div>
+            <div class="window-content" id="prompt">
+                <span>Do you want a suprise cat?</span>
+                <div class="choose-buttons">
+                    <button class="Yes"  id="Yes" onclick="yesButton()">Yes</button>
+                    <button class="Loop" id="Loop0" onclick="loop(0)">No</button>
+                </div>
+            </div>
+            <div class="window-content" id="loading_window">
+                <span>Loading Cat</span>
+                <div class="loading_bar">
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment"></div>
+                    <div class="segment" id="last-segment"></div>
+                </div>
+            </div>
+            <div class="window-content" id="cat">
+                <img src="" id="cat_gif"/>
             </div>
         </div>
-        <div class="window-content" id="prompt">
-            <span>Do you want a suprise cat?</span>
-            <div class="choose-buttons">
-                <button class="OK"  id="OK" onclick="okButton()">OK</button>
-                <button class="cancel" id="cancel" onclick="cancel(0)">Cancel</button>
+        <div class="window-outline" id="popup1" style="display: none;">
+            <div class="window-header">
+                <span class="message">🐱CAAATS🐱</span>
+                <div class="close" id="close" onclick="close()">
+                    <span>×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <span>Are you sure?</span>
+                <div class="choose-buttons">
+                    <button class="Loop"  id="Loop1"" onclick="loop(1)">Yes</button>
+                    <button class="Cancel" id="cancel" onclick="cancel(1)">No</button>
+                </div>
             </div>
         </div>
-        <div class="window-content" id="loading_window">
-            <span>Loading Cat</span>
-            <div class="loading_bar">
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment"></div>
-                <div class="segment" id="last-segment"></div>
+        <div class="window-outline" id="popup2" style="display: none;">
+            <div class="window-header">
+                <span class="message">🐱CAAATS🐱</span>
+                <div class="close" id="close" onclick="close()">
+                    <span>×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <span>Are you <b>really</b> sure?</span>
+                <div class="choose-buttons">
+                    <button class="Loop"  id="Loop2" onclick="loop(2)">Yes</button>
+                    <button class="Cancel" id="cancel" onclick="cancel(2)">No</button>
+                </div>
             </div>
         </div>
-        <div class="window-content" id="cat">
-            <img src="" id="cat_gif"/>
-        </div>
-    </div>
-    <div class="window-outline" id="popup1" style="display: none;">
-        <div class="window-header">
-            <span class="message">🐱CAAATS🐱</span>
-            <div class="close" id="close" onclick="close()">
-                <span>×</span>
+        <div class="window-outline" id="popup3" style="display: none;">
+            <div class="window-header">
+                <span class="message">🐱CAAATS🐱</span>
+                <div class="close" id="close" onclick="close()">
+                    <span>×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <span>Are you <b>really, really</b> sure?</span>
+                <div class="choose-buttons">
+                    <button class="Loop"  id="Loop3" onclick="loop(3)"" >Yes</button>
+                    <button class="Cancel" id="cancel" onclick="cancel(3)">No</button>
+                </div>
             </div>
         </div>
-        <div class="window-content">
-            <span>Are you sure?</span>
-            <div class="choose-buttons">
-                <button class="Yes"  id="Yes"">Yes</button>
-                <button class="Cancel" id="cancel" onclick="cancel(1)">Cancel</button>
+        <div class="window-outline" id="popup4" style="display: none;">
+            <div class="window-header">
+                <span class="message">🐱CAAATS🐱</span>
+                <div class="close" id="close" onclick="close()">
+                    <span>×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <span>Do you <b>HATE</b> cats?</span>
+                <div class="choose-buttons">
+                    <button class="Loop"  id="Loop4" onclick="loop(4)"" >Yes</button>
+                    <button class="Cancel" id="cancel" onclick="cancel(3)">No</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="window-outline" id="popup2" style="display: none;">
-        <div class="window-header">
-            <span class="message">🐱CAAATS🐱</span>
-            <div class="close" id="close" onclick="close()">
-                <span>×</span>
+        <!-- Now the fun really starts -->
+         <div class="window-outline" id="popup5" style="display: none;">
+            <div class="window-header">
+                <span class="message">🐱CAAATS🐱</span>
+                <div class="close" id="close" onclick="close()">
+                    <span>×</span>
+                </div>
             </div>
-        </div>
-        <div class="window-content">
-            <span>Are you <b>really</b> sure?</span>
-            <div class="choose-buttons">
-                <button class="Yes"  id="Yes"">Yes</button>
-                <button class="Cancel" id="cancel" onclick="cancel(2)">Cancel</button>
+            <div class="window-content">
+                <span>Do you <b>HATE</b> cats?</span>
+                <div class="choose-buttons">
+                    <button class="Loop"  id="Loop4" onclick="loop(5)"" >Yes</button>
+                    <button class="Cancel" id="cancel" onclick="cancel(3)">No</button>
+                </div>
             </div>
         </div>
     </div>

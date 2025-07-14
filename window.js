@@ -57,9 +57,9 @@ function close() {
 }
 
 //Okay Button
-document.getElementById("OK").onclick = function() {okButton()};
+document.getElementById("Yes").onclick = function() {yesButton()};
 
-function okButton(){
+function yesButton(){
   document.getElementById("prompt").style.display = "none";
   document.getElementById("loading_window").style.display = "block";
   
@@ -88,20 +88,42 @@ document.getElementById("cat_gif").src = randomCat;
 //After clicking the Cancel Button for the first time
 //document.getElementById("cancel").onclick = function() {cancel()}
 
-window.cancel = function(currentIndex) {
+window.loop = function(currentIndex) {
   
   //const currentPopup = document.getElementById(`popup${currentIndex}`);
   const nextPopup = document.getElementById(`popup${currentIndex + 1}`);
+  console.log(nextPopup)
   console.log("cancel!")
 
   if (nextPopup) {
     nextPopup.style.display = "block";
   }
 
-  if(nextPopup == 1){
+
+  //After Clicking Yes, the background stops moving
+  if(nextPopup.id == "popup4"){
     //stop animation
     const paws = document.querySelectorAll(".paw");
     paws.forEach(paw => paw.classList.add("stopped"));
 
+    // Dim all other windows except popup4
+  document.querySelectorAll(".window-outline").forEach(popup => {
+    if (popup.id !== "popup4" && popup.style.display !== "none") {
+      popup.classList.add("dimmed");
+    }
+  });
+
+    // Dim all visible popups with ID < popup4
+  /* document.querySelectorAll(".window-outline").forEach(popup => {
+    const match = popup.id.match(/^popup(\d+)$/);
+    console.log(match)
+    if (match && parseInt(match[1]) < 4 && popup.style.display !== "none") {
+      popup.classList.add("dimmed");
+    }
+  }); */
   }
+
+  
 }
+
+const background_frames = [`assets\Paw_Eye`];
